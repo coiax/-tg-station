@@ -153,16 +153,14 @@
 	return 1
 
 /datum/action/item_action/chameleon/change/proc/emp_randomise()
-	START_PROCESSING(SSprocessing, src)
-	random_look(owner)
-
 	emp_timer = world.time + EMP_RANDOMISE_TIME
+	emp_randomise_cont()
 
-/datum/action/item_action/chameleon/change/process()
+/datum/action/item_action/chameleon/change/proc/emp_randomise_cont()
 	if(world.time > emp_timer)
-		STOP_PROCESSING(SSprocessing, src)
 		return
 	random_look(owner)
+	add_timer(src, "emp_randomise_cont", EMP_RANDOMISE_TIME / 10)
 
 /datum/action/item_action/chameleon/change/proc/update_item_icon()
 	var/obj/item/I = target
