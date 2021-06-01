@@ -19,6 +19,7 @@
 		/obj/effect/mob_spawn/human/appendicitis_patient,
 		/obj/effect/mob_spawn/human/hugged_patient,
 		/obj/effect/mob_spawn/human/bone_hurting_juice_patient,
+		/obj/effect/mob_spawn/human/decayed_patient,
 	)
 
 	var/datum/turf_reservation/reservation = SSmapping.RequestBlockReservation(3, 3)
